@@ -84,6 +84,8 @@ def hello_http(request):
 
     results = {}
     for store, url in stores.items():
+        print("Store: ", store)
+        print("Url: ", url)
         discount = scrape_best_discount(url)
         results[store] = discount
         print(f"Best discount for {store}: {discount}%")
