@@ -21,7 +21,7 @@ def scrape_best_discount(base_url: str) -> float:
             break
 
         soup = BeautifulSoup(response.text, "html.parser")
-        print("response.text: ", response.text)
+        #print("response.text: ", response.text)
         discount_tags = soup.select("td.card-cell.card-discount")
         if not discount_tags:
             print("can't find discount_tags")
