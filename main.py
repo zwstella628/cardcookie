@@ -97,8 +97,9 @@ def hello_http(request):
 
 
     #TODO(zhanw): add email support
-    #TODO(zhanw): add sql support
+    #TODO(zhanw): add sql support 
     #TODO(zhanw): add spanner support
     #TODO(zhanw): chat to show the trends
+
 
     return jsonify(results)
