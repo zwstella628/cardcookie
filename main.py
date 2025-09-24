@@ -15,13 +15,16 @@ def scrape_best_discount(base_url: str) -> float:
 
     while True:
         url = f"{base_url}?page-number={page}" if page > 1 else base_url
-        response = requests.get(url, timeout=10)
+        response = requests.get(url, timeout=100)
         if response.status_code != 200:
+            print("response status code: ", response.status_code)
             break
 
         soup = BeautifulSoup(response.text, "html.parser")
+        print("response.text: ", response.text)
         discount_tags = soup.select("td.card-cell.card-discount")
         if not discount_tags:
+            print("can't find discount_tags")
             break
 
         for tag in discount_tags:
